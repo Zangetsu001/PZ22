@@ -31,7 +31,15 @@ namespace ConsoleApp1
             }
         }
         
-        public double Field_2 { get => field_2; set => field_2 = value; }
+        public double Field_2 { 
+            get => field_2;
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Error");
+                field_2 = value;
+            }
+        }
 
         /// <summary>
         /// Конструктор без параметров
